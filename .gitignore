@@ -4,5 +4,3 @@ node_modules/
 /blob-report/
 /playwright/.cache/
 allure-results/
-!previous-allure-results/
-allure-report/
