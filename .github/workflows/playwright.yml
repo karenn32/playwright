@@ -37,7 +37,9 @@ jobs:
       run: |
         mkdir -p allure-results
         cp -r previous-allure-results/ allure-results/ || true
+        cd previous-allure-results
         ls
+        cd..
 
     - name: Generate Allure report
       run: npx allure generate allure-results --clean -o allure-report
