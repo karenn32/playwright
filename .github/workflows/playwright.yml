@@ -2,7 +2,7 @@ name: Playwright Tests
 
 on:
   push:
-    branches: [ main ]
+    branches: [ lq11 ]
   pull_request:
     branches: [ main ]
 
@@ -25,6 +25,11 @@ jobs:
     - name: Install Playwright browsers
       run: npx playwright install
 
+    - name: Copy previous Allure data
+      run: |
+        mkdir -p previous-allure-results
+        if [ -d allure-results ]; then cp -r allure-results/* previous-allure-results/; fi
+
     - name: Run Playwright tests
       run: npx playwright test
 
@@ -42,6 +47,8 @@ jobs:
         git config --global user.email 'github-actions[bot]@users.noreply.github.com'
 
     - name: Commit and push report
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       run: |
         git checkout --orphan report-branch
         git --work-tree=allure-report add --all
