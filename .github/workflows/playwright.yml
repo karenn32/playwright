@@ -39,7 +39,7 @@ jobs:
         cp -r previous-allure-results/ allure-results/ || true
         cd previous-allure-results
         ls
-        cd..
+        cd ..
 
     - name: Generate Allure report
       run: npx allure generate allure-results --clean -o allure-report
