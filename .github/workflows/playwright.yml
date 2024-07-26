@@ -17,7 +17,7 @@ jobs:
     - name: Set up Node.js
       uses: actions/setup-node@v2
       with:
-        node-version: '14'
+        node-version: '16'
 
     - name: Install dependencies
       run: npm install
@@ -48,7 +48,7 @@ jobs:
 
     - name: Commit and push report
       env:
-        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        GITHUB_TOKEN: ${{ secrets.MYTOKEN }}
       run: |
         git checkout --orphan report-branch
         git --work-tree=allure-report add --all
@@ -58,5 +58,5 @@ jobs:
     - name: Configure GitHub Pages
       uses: peaceiris/actions-gh-pages@v3
       with:
-        github_token: ${{ secrets.GITHUB_TOKEN }}
+        github_token: ${{ secrets.MYTOKEN }}
         publish_dir: ./allure-report
