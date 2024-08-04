@@ -17,7 +17,7 @@ test.describe('Redmine Registration', () => {
             username: randomUser,
             password: randomPassword,
             confirmPassword: randomPassword,
-            firstname: 'TesTester',
+            firstname: 'TesTesterio',
             lastname: 'Userenko',
             email: randomEmail,
             language: 'en'
