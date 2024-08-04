@@ -7,7 +7,7 @@ on:
     branches: [main]
 
 jobs:
-  allure:
+  autotests:
     name: Run tests and generate Allure Report
     runs-on: ubuntu-latest
     steps:
@@ -20,14 +20,15 @@ jobs:
 
       - name: Install dependencies
         if: always()
-        run: npm install
+        run: |
+          npm install
 
       - name: Run Test
         if: always()
         run: npm test
         continue-on-error: true
 
-        name: Get Allure history
+      - name: Get Allure history
         uses: actions/checkout@v2
         if: always()
         continue-on-error: true
@@ -38,14 +39,13 @@ jobs:
       - name: Allure Report action from marketplace
         uses: simple-elf/allure-report-action@master
         if: always()
-        id: allure-report
+        #id: allure-report
         with:
           allure_results: allure-results
-          gh_pages: gh-pages
-          allure_report: allure-report
+          #gh_pages: gh-pages
+          #allure_report: allure-report
           allure_history: allure-history
-          keep_reports: 20
-        
+
       - name: Deploy report to Github Pages
         if: always()
         uses: peaceiris/actions-gh-pages@v2
