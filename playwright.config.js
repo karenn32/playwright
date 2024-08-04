@@ -1,32 +1,29 @@
 const { defineConfig, devices } = require('@playwright/test');
 
 module.exports = defineConfig({
-  // Указываем, что тесты будут запускаться только в браузере Chromium
+  testDir: 'tests',
   projects: [
     {
       name: 'chromium',
-      use: { ...devices['Desktop Chrome'] }, // Устанавливаем устройство Desktop Chrome
+      use: { ...devices['Desktop Chrome'] },
     },
   ],
-  
-  // Настройка отчетов
+
   reporter: [
-    //['list'], // Стандартный консольный репортер
-    ['allure-playwright'], // Allure репортер
+    ['allure-playwright'],
   ],
 
-  // Глобальные настройки использования
+
   use: {
-    headless: true, // Запуск в безголовом режиме
-    screenshot: 'only-on-failure', // Скриншоты только при ошибках
-    video: 'retain-on-failure', // Видео только при ошибках
+    headless: true,
+    screenshot: 'only-on-failure',
   },
 
-  // Папка для хранения результатов Allure
+
   outputDir: 'allure-results',
 
-  // Опционально: Настройки для запуска тестов
-  testDir: './tests', // Директория с тестами
-  timeout: 30000, // Таймаут для каждого теста (30 секунд)
-  retries: 2, // Количество повторных попыток для каждого теста
+
+  testDir: './tests',
+  timeout: 30000,
+  retries: 0,
 });
