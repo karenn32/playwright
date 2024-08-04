@@ -2,9 +2,9 @@ name: Playwright Tests
 
 on:
   push:
-    branches: [ lq11 ]
+    branches: [kk-LQ-11]
   pull_request:
-    branches: [ main ]
+    branches: [main]
 
 jobs:
   allure:
