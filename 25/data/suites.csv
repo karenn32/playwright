@@ -1,0 +1,6 @@
+"Status","Start Time","Stop Time","Duration in ms","Parent Suite","Suite","Sub Suite","Test Class","Test Method","Name","Description"
+"passed","Mon Aug 05 14:16:51 GMT 2024","Mon Aug 05 14:16:58 GMT 2024","7628","chromium","loginInvalidUser.test.js","Redmine login","","","should not login with random user and password",""
+"passed","Mon Aug 05 14:16:59 GMT 2024","Mon Aug 05 14:17:06 GMT 2024","6984","chromium","registerInvalidEmail.test.js","Redmine Registration","","","should register a new user",""
+"passed","Mon Aug 05 14:16:51 GMT 2024","Mon Aug 05 14:16:59 GMT 2024","8210","chromium","loginValidUser.test.js","Redmine login","","","should login with existing user",""
+"passed","Mon Aug 05 14:16:59 GMT 2024","Mon Aug 05 14:17:06 GMT 2024","6732","chromium","registerInvalidPassword.test.js","Redmine Registration","","","should register a new user",""
+"passed","Mon Aug 05 14:17:06 GMT 2024","Mon Aug 05 14:17:12 GMT 2024","5918","chromium","registerValidUser.test.js","Redmine Registration","","","should register a new user",""
