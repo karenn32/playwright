@@ -40,13 +40,13 @@ Configure Playwright and Allure Report as needed in `playwright.config.js`.
 To run the tests in HEADLESS mod, use the following command:
 
 ```bash
-npm run test ///////////////////////////
+npm run test
 ```
 
 or in HEADED
 
 ```bash
-npm run test:headed ///////////////////////////
+npm run test:headed
 ```
 
 This command will execute all the test files located in the `tests` directory. By default, Playwright will look for files with `.spec.js` or `.test.js` extensions.
@@ -59,10 +59,10 @@ This command will execute all the test files located in the `tests` directory. B
    npm install -g allure-commandline --save-dev
    ```
 
-2. **Run tests with Allure reporting:**
+2. **Run tests:**
 
    ```bash
-   npx playwright test --reporter=allure-playwright
+   npm run test
    ```
 
    This command will generate test results in the Allure format.
@@ -70,17 +70,17 @@ This command will execute all the test files located in the `tests` directory. B
 3. **Generate the Allure Report:**
 
    ```bash
-   allure generate allure-results --clean -o allure-report
+   npm run allure:generate
    ```
 
 4. **Serve the Allure Report (optional):**
 
    ```bash
-   allure open allure-report
+   npm run allure:open
    ```
 
 ## GitHub Pages Deployment
 
-The Allure Report is automatically deployed to GitHub Pages after mergin in MAIN branch. Make sure to configure your GitHub repository settings to enable GitHub Pages and point it to the `gh-pages` branch.
+The Allure Report is automatically deployed to GitHub Pages after pull request in MAIN branch. Make sure to configure your GitHub repository settings to enable GitHub Pages and point it to the `gh-pages` branch.
 
 After deployment, you can access the report via link https://karenn32.github.io/playwright/
