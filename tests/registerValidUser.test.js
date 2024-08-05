@@ -20,7 +20,6 @@ test.describe('Redmine Registration', () => {
             firstname: 'TesTesterio',
             lastname: 'Userenko',
             email: randomEmail,
-            language: 'en'
         };
 
         await registerPage.registerUser(user);

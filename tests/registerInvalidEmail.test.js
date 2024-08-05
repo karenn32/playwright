@@ -2,7 +2,7 @@ const { test, expect } = require('@playwright/test');
 const { RegisterPage } = require('../pages/registerPage.js');
 import { generateRandomString } from '../utils/random.js';
 
-const randomUser = 'userForeTest' + generateRandomString(4);
+const randomUser = 'userForTest' + generateRandomString(4);
 const randomPassword = generateRandomString(8);
 const invalidEmail = 'userForTest' + generateRandomString(4) + '@com';
 
@@ -18,7 +18,6 @@ test.describe('Redmine Registration', () => {
             firstname: 'TesTesterq',
             lastname: 'Userenko',
             email: invalidEmail,
-            language: 'en'
         };
 
         await registerPage.registerUser(user);

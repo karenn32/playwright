@@ -25,16 +25,28 @@ Ensure you have Node.js installed on your machine. You can download it from [nod
    npm install
    ```
 
+3. **Install Playwright browsers:**
+
+   ```bash
+   npx playwright install
+   ```
+
 ### Configuration
 
 Configure Playwright and Allure Report as needed in `playwright.config.js`.
 
 ## Running Tests
 
-To run the tests, use the following command:
+To run the tests in HEADLESS mod, use the following command:
 
 ```bash
-npx playwright test ///////////////////////////
+npm run test ///////////////////////////
+```
+
+or in HEADED
+
+```bash
+npm run test:headed ///////////////////////////
 ```
 
 This command will execute all the test files located in the `tests` directory. By default, Playwright will look for files with `.spec.js` or `.test.js` extensions.
@@ -50,7 +62,7 @@ This command will execute all the test files located in the `tests` directory. B
 2. **Run tests with Allure reporting:**
 
    ```bash
-   npx playwright test --reporter=line,allure-playwright
+   npx playwright test --reporter=allure-playwright
    ```
 
    This command will generate test results in the Allure format.
@@ -69,34 +81,6 @@ This command will execute all the test files located in the `tests` directory. B
 
 ## GitHub Pages Deployment
 
-The Allure Report is automatically deployed to GitHub Pages. Make sure to configure your GitHub repository settings to enable GitHub Pages and point it to the `gh-pages` branch.
+The Allure Report is automatically deployed to GitHub Pages after mergin in MAIN branch. Make sure to configure your GitHub repository settings to enable GitHub Pages and point it to the `gh-pages` branch.
 
-1. **Deploy to GitHub Pages:**
-
-   ```bash
-   npm run deploy
-   ```
-
-   Ensure your `package.json` includes a deploy script for GitHub Pages:
-
-   ```json
-   "scripts": {
-       "deploy": "gh-pages -d allure-report"
-   }
-   ```
-
-2. **Access the report:**
-
-   After deployment, you can access the report via link https://karenn32.github.io/playwright/
-
-## Example Test Cases
-
-- **User Registration Test:** Tests the registration process, including filling out the registration form and checking for success notifications.
-- **User Login Test:** Tests the login process to ensure users can log in with valid credentials.
-
-## Contact
-
-For questions or further information, please contact:
-
-- **Email:** karenn32@gmail.com
-- **GitHub:** [karenn32](https://github.com/karenn32)
+After deployment, you can access the report via link https://karenn32.github.io/playwright/
